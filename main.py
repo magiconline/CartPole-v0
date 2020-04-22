@@ -11,6 +11,8 @@ from keras.models import Sequential, load_model
 
 SHOW = True  # control env.render()
 Train = False  # control model.fit, EPSILON
+MODEL_PATH = 'model-1587539585'  # None or 'filename'
+
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # dont have to use gpu because the limit should be env.step() not model.fit()
 
 
@@ -18,7 +20,6 @@ EPISODES = 3000
 DISCOUNT = 0.95
 EPSILON = 1.0 if Train else 0.0  # explore or use
 EPSILON_DACAY = 0.99
-MODEL_PATH = 'model-1587539585'  # None or 'filename'
 BATCH_SIZE = 64
 EPOCH = 5
 MAX_REPLAY_MEMORY = BATCH_SIZE * 5
